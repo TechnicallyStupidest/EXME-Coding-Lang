@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "EXME",
+  "scopeName": "source.exme",
+  "patterns": [
+    {"name": "comment.line.c", "begin": "```", "end": "$"},
+    {"name": "keyword.control.c", "match": "\\*@(?:W|G|M|J|!)"},
+    {"name": "keyword.control.c", "match": "~(?:file|data|import|func|endfunc)\\b"},
+    {"name": "variable.other.c", "match": "(?<![A-Za-z0-9_])(?:O|B|X|F)(?=[0-9A-Fa-fxX])"},
+    {"name": "constant.numeric.c", "match": "\\b(?:0x[0-9A-Fa-f]+|[0-9]+)\\b"},
+    {"name": "string.quoted.double.c", "begin": "\"", "end": "\""},
+    {"name": "entity.name.function.c", "match": "(?<=~func\\s)[A-Za-z_][A-Za-z0-9_]*"},
+    {"name": "constant.numeric.hex.c", "match": "(?<=X)[0-9A-Fa-f_ ]+"}
+  ]
+}
