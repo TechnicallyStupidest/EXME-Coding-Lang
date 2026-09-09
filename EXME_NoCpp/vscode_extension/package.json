@@ -1,0 +1,44 @@
+{
+  "name": "exme-language",
+  "displayName": "EXME",
+  "description": "VS Code support for the EXME language.",
+  "version": "2.1.0",
+  "publisher": "exme",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:exme", "onCommand:exme.runFile", "onCommand:exme.buildFile"],
+  "main": "./exme_extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "exme",
+        "aliases": ["EXME", "exme"],
+        "extensions": [".exme"],
+        "configuration": "./exme_language_configuration.json",
+        "icon": { "light": "./exme.png", "dark": "./exme.png" }
+      }
+    ],
+    "grammars": [
+      { "language": "exme", "scopeName": "source.exme", "path": "./syntaxes/exme_syntax.tmLanguage.json" }
+    ],
+    "commands": [
+      {
+        "command": "exme.buildFile",
+        "title": "Build EXME",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "exme.runFile",
+        "title": "Run EXME",
+        "icon": { "light": "./exme.png", "dark": "./exme.png" }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        { "command": "exme.buildFile", "when": "resourceExtname == .exme", "group": "navigation@1" },
+        { "command": "exme.runFile", "when": "resourceExtname == .exme", "group": "navigation@2" }
+      ]
+    }
+  },
+  "icon": "exme.png"
+}

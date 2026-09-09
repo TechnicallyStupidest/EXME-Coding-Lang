@@ -1,0 +1,15 @@
+EXME Windows install
+
+1. Double-click install_exme_windows.bat
+2. Close all VS Code and terminal windows.
+3. Reopen VS Code.
+4. Open a terminal and run:
+
+   exme --version
+
+5. Create a .exme file.
+6. Compile it with:
+
+   exme program.exme -o program.bin
+
+No C++, g++, MinGW, or Visual Studio C++ compiler is needed.
